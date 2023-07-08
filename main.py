@@ -7,7 +7,7 @@ import pandas as pd
 from ple import PLE
 from ple.games.flappybird import FlappyBird
 
-device = torch.device("cuda:2")
+device = torch.device("cuda:1")
 
 class Net(nn.Module):
     def __init__(self, n_states, n_actions, n_hidden):
@@ -101,7 +101,7 @@ def get_reward(r):
     return r
 
 if __name__ == "__main__":
-    display = False
+    display = True
     
     game = FlappyBird()
     p = PLE(game, fps=30, display_screen=display, force_fps=not(display))
